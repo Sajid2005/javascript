@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Image Slider</title>
+</head>
+<body>
+  <h2>Image Slider Project</h2>
+
+  <div>
+    <img id="slideImage" src="" width="400" height="250"><br>
+    <p id="caption"></p>
+    <p id="counter"></p>
+  </div>
+
+  <button onclick="prevSlide()">Prev</button>
+  <button onclick="nextSlide()">Next</button>
+  <button onclick="startAuto()">Auto Play</button>
+  <button onclick="stopAuto()">Pause</button>
+
+  <h3>Add New Slide</h3>
+  <input type="text" id="imgUrl" placeholder="Image URL"><br><br>
+  <input type="text" id="imgCap" placeholder="Caption"><br><br>
+  <button onclick="addSlide()">Add</button>
+
+  <script>
+    
+    let slides = [
+      { img: "https://picsum.photos/id/1015/400/250", caption: "Beautiful Sunset" },
+      { img: "https://picsum.photos/id/1016/400/250", caption: "Mountain View" },
+      { img: "https://picsum.photos/id/1018/400/250", caption: "Green Valley" }
+    ];
+
+    let index = 0;
+    let auto;
+
+    
+    function showSlide(i) {
+      document.getElementById("slideImage").src = slides[i].img;
+      document.getElementById("caption").innerHTML = slides[i].caption;
+      document.getElementById("counter").innerHTML = "Slide " + (i+1) + " of " + slides.length;
+      console.log("Slide " + (i+1) + ": " + slides[i].caption);
+    }
+
+    
+    function prevSlide() {
+      if (index > 0) {
+        index--;
+        showSlide(index);
+      } else {
+        alert("This is the first slide");
+      }
+    }
+
+    
+    function nextSlide() {
+      if (index < slides.length-1) {
+        index++;
+        showSlide(index);
+      } else {
+        alert("This is the last slide");
+      }
+    }
+
+    
+    function addSlide() {
+      let url = document.getElementById("imgUrl").value;
+      let cap = document.getElementById("imgCap").value;
+      if (url && cap) {
+        slides.push({ img: url, caption: cap });
+        alert("Slide Added!");
+        index = slides.length - 1;
+        showSlide(index);
+      } else {
+        alert("Enter both URL and Caption");
+      }
+    }
+
+    
+    function startAuto() {
+      stopAuto();
+      auto = setInterval(function() {
+        if (index < slides.length-1) {
+          index++;
+        } else {
+          index = 0;
+        }
+        showSlide(index);
+      }, 3000);
+    }
+
+    
+    function stopAuto() {
+      clearInterval(auto);
+    }
+
+    
+    showSlide(index);
+  </script>
+</body>
+</html>
