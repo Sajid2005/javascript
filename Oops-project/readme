@@ -1,0 +1,7 @@
+/project-root
+  ├── index.html
+  ├── js/
+  │    └── script.js
+  ├── css/
+  │    └── style.css
+  └── README.md

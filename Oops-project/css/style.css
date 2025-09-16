@@ -1,0 +1,87 @@
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h1 {
+    font-weight: bold;
+    color: #333;
+  }
+
+  #taskForm input,
+  #taskForm button {
+    min-height: 45px;
+  }
+
+
+  .task-card {
+    background-color: #fff;
+    border-left: 5px solid #0d6efd;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .task-card.completed {
+    border-left-color: rgb(25, 135, 84);
+    background-color: rgb(233, 251, 238);
+    text-decoration: line-through;
+    color: rgb(108, 117, 125);
+  }
+
+  .task-card.overdue {
+    border-left-color: #dc3545;
+    background-color: #fbe9e9;
+  }
+
+  .task-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .task-meta {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .task-actions {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  .task-actions button {
+    margin-left: 5px;
+  }
+
+  #dashboard {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  #dashboard h4 {
+    font-weight: 600;
+  }
+
+  #search,
+  #statusFilter {
+    height: 45px;
+  }
+
+  @media (max-width: 768px) {
+    .task-actions {
+      position: static;
+      margin-top: 10px;
+      text-align: right;
+    }
+  }
+  body {
+    background-color: rgb(221, 104, 104);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
