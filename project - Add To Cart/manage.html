@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Manage Products</title>
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-4">
+    <h2 class="text-center">Manage Products</h2>
+    <div class="text-center mb-3">
+      <a href="./index.html" class="btn btn-outline-dark btn-sm">Home</a>
+      <a href="./cart.html" class="btn btn-dark btn-sm">Cart (<span id="cart-count">0</span>)</a>
+      <a href="./manage.html" class="btn btn-outline-primary btn-sm">Manage Products</a>
+    </div>
+    <div class="card p-3 mb-4">
+      <h5 id="form-title">Add New Product</h5>
+      <form id="product-form">
+        <input type="hidden" id="product-id">
+        <div class="row g-2">
+          <div class="col-md-4">
+            <input type="text" id="name" class="form-control" placeholder="Product Name" required>
+          </div>
+          <div class="col-md-2">
+            <input type="number" id="price" class="form-control" placeholder="Price" required>
+          </div>
+          <div class="col-md-2">
+            <input type="text" id="brand" class="form-control" placeholder="Brand" required>
+          </div>
+          <div class="col-md-2">
+            <input type="text" id="type" class="form-control" placeholder="Type" required>
+          </div>
+          <div class="col-md-2">
+            <input type="number" id="stock" class="form-control" placeholder="Stock" required>
+          </div>
+          <div class="col-md-12 mt-2">
+            <input type="text" id="image" class="form-control" placeholder="Image URL" required>
+          </div>
+          <div class="col-md-12 mt-2">
+            <textarea id="description" class="form-control" placeholder="Description"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Save</button>
+        <button type="button" class="btn btn-secondary mt-3" onclick="resetForm()">Cancel</button>
+      </form>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Stock</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="manage-products"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
