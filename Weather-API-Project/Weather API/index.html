@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter Your Location Here" spellcheck="false" />
+            <button>
+                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                <lord-icon class="search-icon" src="https://cdn.lordicon.com/jtkfemwz.json" trigger="hover"
+                    stroke="bold"></lord-icon>
+            </button>
+        </div>
+        <div class="error" style="display: none;">
+            <p>Invalid city name!</p>
+        </div>
+        <div class="weather" style="display: none;">
+            <img src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"
+                class="weather-icon icon" alt="Weather Icon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">Kanpur</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="https://www.svgrepo.com/show/26690/humidity.svg" class="icon humidity-icon" alt="">
+                    <div class="icon-text">
+                        <p>Humidity</p>
+                        <p class="humidity">50%</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="https://www.svgrepo.com/show/14493/wind.svg" class="wind-icon icon" alt="">
+                    <div class="icon-text">
+                        <p>Wind Speed</p>
+                        <p class="wind">15 kmph</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
