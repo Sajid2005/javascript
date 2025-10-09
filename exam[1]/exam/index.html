@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Result Scoreboard — JS Practical</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Result Scoreboard</h1>
+      <div id="nav-area" class="nav-area">
+        <span id="welcomeText" style="display:none"></span>
+        <button id="logoutBtn" class="btn small" style="display:none">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Auth area: toggles between Login and Signup -->
+      <section id="authSection" class="card auth-card">
+        <div class="tabs">
+          <button id="showLoginBtn" class="tab active">Login</button>
+          <button id="showSignupBtn" class="tab">Sign up</button>
+        </div>
+
+        <div id="loginForm" class="form">
+          <h2>Login</h2>
+          <div class="field"><label>Email</label><input id="loginEmail" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label>Password</label><input id="loginPassword" type="password" placeholder="password"></div>
+          <div class="actions">
+            <button id="loginBtn" class="btn">Login</button>
+          </div>
+          <p id="loginMsg" class="msg"></p>
+        </div>
+
+        <div id="signupForm" class="form" style="display:none">
+          <h2>Sign up</h2>
+          <div class="field"><label>Full name</label><input id="signupName" type="text" placeholder="Your name"></div>
+          <div class="field"><label>Email</label><input id="signupEmail" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label>Password</label><input id="signupPassword" type="password" placeholder="password"></div>
+          <div class="field"><label>Confirm Password</label><input id="signupConfirmPassword" type="password" placeholder="confirm password"></div>
+          <div class="actions">
+            <button id="signupBtn" class="btn">Create account</button>
+          </div>
+          <p id="signupMsg" class="msg"></p>
+        </div>
+      </section>
+
+      <!-- Results dashboard (visible only after login) -->
+      <section id="resultsSection" style="display:none">
+        <div class="card">
+          <h2>Your Results</h2>
+
+          <div class="controls-row">
+            <div class="left-controls">
+              <input id="searchInput" placeholder="Search by student or subject..." />
+              <select id="subjectFilter"><option value="">All subjects</option></select>
+            </div>
+            <div class="right-controls">
+              <select id="sortSelect">
+                <option value="score_desc">Sort: Score (desc)</option>
+                <option value="score_asc">Sort: Score (asc)</option>
+                <option value="date_desc">Sort: Date (newest)</option>
+                <option value="date_asc">Sort: Date (oldest)</option>
+              </select>
+              <button id="refreshBtn" class="btn small">Refresh</button>
+            </div>
+          </div>
+
+          <div class="form add-result">
+            <h3>Add / Edit Result</h3>
+            <div class="field-inline">
+              <input id="studentName" placeholder="Student name" />
+              <input id="subjectInput" placeholder="Subject" />
+            </div>
+            <div class="field-inline">
+              <input id="scoreInput" type="number" min="0" max="100" placeholder="Score (0-100)" />
+              <input id="dateInput" type="date" />
+            </div>
+            <div class="actions">
+              <button id="addResultBtn" class="btn">Add Result</button>
+              <button id="cancelEditBtn" class="btn ghost" style="display:none">Cancel edit</button>
+            </div>
+            <p id="addResultMsg" class="msg"></p>
+          </div>
+
+          <div id="scoreboardList" class="scoreboard"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>JS Practical — Result Scoreboard. Data persisted locally (mock API).</small>
+    </footer>
+  </div>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
